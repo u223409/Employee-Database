@@ -1,0 +1,30 @@
+
+public class EmployeeManager extends EmployeePerson {
+ 
+   private String department;
+
+  
+   // Default constructor 
+   public EmployeeManager() {
+      department = "";
+   } 
+
+ 
+   // Constructor with parameters
+   public EmployeeManager(String empDepartment) {
+      department = empDepartment;
+   } 
+
+   
+   // Get the number of people managed
+   public String empDepartment() {
+      return department;
+   } 
+
+   @Override 
+   public void printInfo() {
+      System.out.print("Name: " + firstName + lastName + ", Employee ID: " + empID +
+                       ", Salary: " + salary);
+      System.out.println(", Department: " + empDepartment());
+   } 
+} 
