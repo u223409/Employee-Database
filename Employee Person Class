@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class EmployeePerson {
+
+	Scanner scnr = new Scanner(System.in); // Input stream for standard input
+    Scanner inSS = null;                   // Input string stream
+    String lineString;                     // Holds line of text
+    protected String firstName;       // Format: last name, first name
+   protected String lastName; 
+   protected int empID;
+   protected double salary;
+   protected boolean inputDone;
+
+   // Default constructor.
+   public EmployeePerson() {
+      firstName       = "";
+      lastName		= "";			
+      empID       = 0;
+      salary   = 0;
+      inputDone = false;
+   } 
+
+   
+   // Constructor with parameters to set the private variables
+   public EmployeePerson(String empFirstName, String empLastName, int employeeID, double empSalary) {
+      setData(empFirstName, empLastName, employeeID, empSalary);
+   }  
+ 
+   public void setData(String empFirstName, String empLastName,
+                       int employeeID, double empSalary) {
+      firstName       = empFirstName;
+      lastName		= empLastName;
+      empID       = employeeID;
+      salary   = empSalary;
+   } 
+
+   
+   public void printInfo() {
+      System.out.print("Name: " + firstName + lastName + ", Employee ID: " + empID +
+                       ", Salary: " + salary);
+   } 
+} 
