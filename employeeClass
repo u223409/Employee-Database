@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+
+public class Employee {
+
+   public static void main(String[] args) {
+
+	  Scanner scnr = new Scanner(System.in); 
+      Scanner inSS = null;                  
+      String lineString;                    
+
+  	EmployeeManager manager = new EmployeeManager("Roberta");
+    Staff   staff1  = new Staff();
+
+          
+     System.out.println("Enter \"firstName lastName empID salary\" on each line");
+     System.out.println("(\"Exit\" as firstname exits).\n");
+     
+     while (!staff1.inputDone){
+
+         // Entire line into lineString
+         lineString = scnr.nextLine();
+
+         // Create new input string stream
+         inSS = new Scanner(lineString);
+
+         // Now process the line
+         staff1.firstName = inSS.next();
+
+         // Output parsed values
+         if (staff1.firstName.equals("Exit")) {
+            System.out.println("   Exiting.");
+
+            staff1.inputDone = true;
+         }
+         else {
+            staff1.lastName = inSS.next();
+            staff1.empID = inSS.nextInt();
+
+            System.out.println("   First name: " + staff1.firstName);
+            System.out.println("   Last name: " + staff1.lastName);
+            System.out.println("   Employee ID: " + staff1.empID);
+            System.out.println("   Salary: " + staff1.salary);
+      
+   } 
+         manager.printInfo();
+         staff1.printInfo();
+
+     }
+   }
+}
