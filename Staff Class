@@ -1,0 +1,31 @@
+
+public class Staff extends EmployeePerson {
+
+   private String managerName;
+
+ 
+   // Default constructor
+   public Staff() {
+      managerName = "";
+   } 
+
+ 
+   // Constructor with parameters 
+   public Staff(String reportsTo) {
+      managerName = reportsTo;
+   } 
+
+ 
+   // Get the name of the manager
+   public String getManagerName() {
+      return managerName;
+   } 
+
+  
+   @Override 
+   public void printInfo() {
+      System.out.print("Name: " + firstName + lastName + ", Employee ID: " + empID +
+                       ", Salary: " + salary);
+      System.out.println(", Department: " + getManagerName());
+   } 
+} 
